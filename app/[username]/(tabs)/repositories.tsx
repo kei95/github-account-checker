@@ -35,11 +35,11 @@ export default function RepositoriesScreen() {
     setRepositories(response.res);
   }
 
-  // useEffect(() => {
-  //   if (typeof username !== "string") return;
+  useEffect(() => {
+    if (typeof username !== "string") return;
 
-  //   requestRepositories(username);
-  // }, [username]);
+    requestRepositories(username);
+  }, [username]);
 
   if (!repositories)
     return (
@@ -64,13 +64,7 @@ export default function RepositoriesScreen() {
           asChild
         >
           <Text style={styles.bulletPoint}>
-            &#x2022;{" "}
-            <Text
-              style={styles.title}
-              onPress={() => Linking.openURL(repository.html_url)}
-            >
-              {repository.name}
-            </Text>
+            &#x2022; <Text style={styles.title}>{repository.name}</Text>
           </Text>
         </Link>
       ))}

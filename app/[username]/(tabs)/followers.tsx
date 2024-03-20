@@ -32,11 +32,11 @@ export default function FollowersScreen() {
     setFollowers(response.res);
   }
 
-  // useEffect(() => {
-  //   if (typeof username !== "string") return;
+  useEffect(() => {
+    if (typeof username !== "string") return;
 
-  //   requestFollowers(username);
-  // }, [username]);
+    requestFollowers(username);
+  }, [username]);
 
   if (!followers)
     return (
